@@ -7,6 +7,7 @@ import {
   middlewareLogResponse,
   middlewareMetricsInc,
 } from "./api/middleware.js";
+import { handlerChirpsValidate } from "./api/chirps.js";
 
 const app = express();
 const PORT = 8080;
@@ -16,7 +17,9 @@ app.use("/app", middlewareMetricsInc, express.static("./src/app"));
 
 app.get("/api/healthz", handlerReadiness);
 app.get("/admin/metrics", handlerMetrics);
-app.get("/admin/reset", handlerReset);
+app.post("/admin/reset", handlerReset);
+
+app.post("/api/validate_chirp", handlerChirpsValidate);
 
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
