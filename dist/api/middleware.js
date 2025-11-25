@@ -1,3 +1,4 @@
+import { config } from "../config.js";
 export function middlewareLogResponse(req, res, next) {
     res.on("finish", () => {
         const statusCode = res.statusCode;
@@ -5,5 +6,9 @@ export function middlewareLogResponse(req, res, next) {
             console.log(`[NON-OK] ${req.method} ${req.url} - Status: ${statusCode}`);
         }
     });
+    next();
+}
+export function middlewareMetricsInc(req, res, next) {
+    config.fileserverHits++;
     next();
 }
