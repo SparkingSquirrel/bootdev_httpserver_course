@@ -15,7 +15,17 @@ export async function handlerChirpsValidate(req: Request, res: Response) {
     return;
   }
 
+  let words = params.body.split(" ");
+  const badWords = ["kerfuffle", "sharbert", "fornax"];
+  words.forEach((word, index) => {
+    if (badWords.includes(word.toLowerCase())){
+      words[index] = "****";
+    }
+  })
+
+  const cleanedBody = words.join(" ");
+
   respondWithJSON(res, 200, {
-    valid: true,
+    cleanedBody: cleanedBody,
   });
 }
