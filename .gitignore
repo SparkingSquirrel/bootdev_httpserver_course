@@ -1,2 +1,4 @@
 server.log
 dist/
+.env
+drizzle.config.ts
