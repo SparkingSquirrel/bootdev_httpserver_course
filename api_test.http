@@ -36,3 +36,11 @@ content-type: application/json
 {
   "body": "kerfuffle is a sharbert and fornax" 
 }
+
+### create user happy path
+POST http://localhost:8080/api/users
+content-type: application/json
+
+{
+  "email": "user@example.com" 
+}
