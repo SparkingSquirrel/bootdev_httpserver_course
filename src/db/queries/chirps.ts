@@ -16,3 +16,10 @@ export async function resetChirps() {
 
   return result;
 }
+
+export async function getChirps() {
+  const result = await db
+    .select()
+    .from(chirps); 
+  return result;
+}

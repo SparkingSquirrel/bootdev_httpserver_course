@@ -1,7 +1,7 @@
 #requests for REST client extension
 
 ###
-GET http://localhost:8080/app
+GET http://localhost:8080/app/index.html
 
 ### 
 GET http://localhost:8080/admin/metrics
@@ -51,7 +51,7 @@ content-type: application/json
 
 {
   "body": "Hello, world!",
-  "userId": "5b75884f-73e4-4c42-9af4-2490948af1f8"
+  "userId": "f3478bbe-d298-4df5-ac0e-8ac0f509a54d"
 }
 
 ### chirp too long
@@ -62,3 +62,15 @@ content-type: application/json
   "body": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   "userId": "5b75884f-73e4-4c42-9af4-2490948af1f8"
 }
+
+###
+POST http://localhost:8080/api/chirps
+content-type: application/json
+
+{
+  "body": "If you're committed enough, you can make any story work.",
+  "userId": "f3478bbe-d298-4df5-ac0e-8ac0f509a54d"
+}
+
+###
+GET http://localhost:8080/api/chirps
